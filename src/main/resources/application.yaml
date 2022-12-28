@@ -1,0 +1,22 @@
+server:
+  port: 7070
+
+logging:
+  file:
+    name: main.log
+  level:
+    sql: debug
+    web: debug
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/purchaseorderdb
+    username: postgres
+    password: password
+    driverClassName: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    open-in-view: off
