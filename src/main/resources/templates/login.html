@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org"
+      xmlns:xlmns="http://www.w3.org/1999/xhtml" lang="en, ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase-order application</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div id="page">
+    <div id="content">
+        <div class="index_page_main_title_block">
+            <h1>Войти в систему</h1>
+        </div>
+        <div th:if="${error}">
+            Unable to login. Check your username and password.
+        </div>
+        <form method="POST" th:action="@{/login}">
+            <div class="login_form">
+                <div class="login_input">
+                    <label class="login_labels">Логин (ваш табельный номер):</label>
+                    <input class="login_input" type="text" name="username" id="username" value="" required="required"/>
+                </div>
+                <div class="login_input">
+                    <label class="login_labels">Пароль:</label>
+                    <input class="login_input" type="password" name="password" id="password" value="" required="required"/>
+                </div>
+                <div class="login_button_block">
+                    <input class="login_button" type="submit" value="Войти">
+                </div>
+                <span>Если у вас нет учётной записи нажмите <a th:href="@{/registration}">зарегистрироваться</a>.</span>
+            </div>
+        </form>
+        <footer>
+            <div th:insert="~{index::footer}">Footer here</div>
+        </footer>
+    </div>
+</div>
+</body>
+</html>
