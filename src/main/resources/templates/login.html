@@ -23,7 +23,8 @@
                 </div>
                 <div class="login_input">
                     <label class="login_labels">Пароль:</label>
-                    <input class="login_input" type="password" name="password" id="password" value="" required="required"/>
+                    <input class="login_input" type="password" name="password" id="password" value=""
+                           required="required"/>
                 </div>
                 <div class="login_button_block">
                     <input class="login_button" type="submit" value="Войти">
@@ -31,8 +32,18 @@
                 <span>Если у вас нет учётной записи нажмите <a th:href="@{/registration}">зарегистрироваться</a>.</span>
             </div>
         </form>
-        <footer>
-            <div th:insert="~{index::footer}">Footer here</div>
+        <footer class="footer" id="footer" th:fragment="footer">
+            <div class="footer_top">
+                <div class="navigation_links">
+                    <a class="about" th:href="@{/about}" target="_blank">О программе</a>
+                    <a class="contacts" th:href="@{/contacts}" target="_blank">Контакты</a>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="copyright">
+                    <p>Copyright &#169 2022</p>
+                </div>
+            </div>
         </footer>
     </div>
 </div>
