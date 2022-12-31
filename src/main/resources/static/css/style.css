@@ -67,6 +67,38 @@ body {
 
 /* login page end */
 
+/* registration page start */
+
+fieldset {
+    margin: 10% auto 0 auto;
+    width: 370px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: end;
+}
+
+.registration_legend {
+    font-size: 30px;
+    letter-spacing: 0.05em;
+}
+
+.registration_input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.registration_button {
+    margin-top: 5px;
+    width: 190px;
+    height: 35px;
+    box-shadow: 1px 1px 1px #6B7777;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+}
+
+/* registration page start */
 h2 {
     margin-left: 10px;
 }

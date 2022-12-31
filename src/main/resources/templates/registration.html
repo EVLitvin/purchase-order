@@ -2,41 +2,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org" lang="en, ru">
 <head>
-  <title>Virtual book library</title>
-  <link rel="stylesheet" th:href="@{css/style.css}"/>
+    <title>Virtual book library</title>
+    <link rel="stylesheet" th:href="@{css/style.css}"/>
 </head>
 
 <body>
-<h1>Register</h1>
-
-<form method="POST" th:action="@{/registration}" id="registrationForm">
-  <div class="content">
-
-    <label for="firstName">Имя: </label>
-    <input type="text" name="firstName" required="required"/><br/>
-
-    <label for="lastName">Фамилия: </label>
-    <input type="text" name="lastName" required="required"/><br/>
-
-    <label for="personalNumber">Табельный номер: </label>
-    <input type="text" name="personalNumber" required="required"/><br/>
-
-    <label for="phoneNumber">Телефон: </label>
-    <input type="text" name="phoneNumber" required="required"/><br/>
-
-    <label for="email">Email: </label>
-    <input type="text" name="email" required="required"/><br/>
-
-    <label for="password">Password: </label>
-    <input type="password" name="password" required="required"/><br/>
-  </div>
-  <div class="register-button">
-    <input type="submit" value="Register"/>
-  </div>
-</form>
-
+<div class="wrapper">
+    <fieldset>
+        <legend class="registration_legend">Регистрация</legend>
+        <form method="POST" th:action="@{/registration}" id="registrationForm">
+            <div class="registration_input">
+                <label for="firstName">Имя: </label>
+                <input type="text" name="firstName" required="required"/>
+            </div>
+            <div class="registration_input">
+                <label for="lastName">Фамилия: </label>
+                <input type="text" name="lastName" required="required"/>
+            </div>
+            <div class="registration_input">
+                <label for="personalNumber">Табельный номер: </label>
+                <input type="text" name="personalNumber" required="required" maxlength="5"/>
+            </div>
+            <div class="registration_input">
+                <label for="phoneNumber">Телефон: </label>
+                <input type="text" name="phoneNumber" required="required"/>
+            </div>
+            <div class="registration_input">
+                <label for="email">Email: </label>
+                <input type="text" name="email" required="required"/>
+            </div>
+            <div class="registration_input">
+                <label for="password">Пароль: </label>
+                <input type="password" name="password" required="required"/><br/>
+            </div>
+            <div>
+                <input type="submit" value="Зарегистрироваться" class="registration_button"/>
+            </div>
+        </form>
+    </fieldset>
+</div>
 </body>
 <footer>
-  <div th:insert="~{login::footer}">Footer here</div>
+    <div th:insert="~{login::footer}">Footer here</div>
 </footer>
 </html>
