@@ -6,20 +6,28 @@
     color: whitesmoke;
 }
 
-.footer_top {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 5px;
+.footer_content {
+    text-align: center;
+    margin: 5px auto 5px auto;
 }
 
-.footer_bottom {
+.about_link, .contacts_link {
+    display: inline;
+}
 
+.about_link a, .contacts_link a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.about_link a:hover, .contacts_link a:hover,
+.about_link a:focus, .contacts_link a:focus {
+    text-decoration: underline;
 }
 
 .copyright {
-    margin-right: 5px;
     margin-bottom: 5px;
-    text-align: right;
-    font-size: 12px;
+    text-align: center;
+    font-size: 10px;
     color: white;
 }
