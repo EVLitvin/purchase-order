@@ -4,18 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="pragma" content="no-cache"/>
-    <meta name="description" content="purchase orders for isotopes"/>
+    <meta name="description" content="purchase orders for export department of isotope production"/>
     <meta http-equiv="author" content="Evgenii Litvin"/>
-    <title>Purchase-order application</title>
+    <title>Заказ-наряд | Вход</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <div id="wrapper">
     <div class="index_page_main_title_block">
         <h1>Войти в систему</h1>
-    </div>
-    <div th:if="${error}">
-        Unable to login. Check your username and password.
     </div>
     <form method="POST" th:action="@{/login}">
         <div class="login_form">
