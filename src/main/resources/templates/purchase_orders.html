@@ -9,8 +9,90 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<footer>
-    <div th:insert="~{footer::footer}">Footer here</div>
-</footer>
+<header>
+    <span th:text="${purchaseOrderUser.lastName + ' ' + purchaseOrderUser.firstName}">User lastname/firstname.</span>
+    <span> | </span>
+    <a th:href="@{/logout}">Выйти</a>
+    <p class="paragraph">Сегодня - <span th:text="${date}">Today</span></p>
+</header>
+<div class="wrapper">
+    <div class="left_side">
+        <fieldset class="purchase_order_add_row_fieldset">
+            <legend class="purchase_order_legend">Добавить запись</legend>
+            <form th:method="POST" th:object="${purchaseOrder}" th:action="@{/purchase_orders}">
+                <div class="purchase_order_input">
+                    <label>Номер контракта</label>
+                    <input type="text" th:field="*{contractNumber}" th:value="${purchaseOrder.contractNumber}"/>
+                </div>
+                <div class="purchase_order_input">
+                    <label>Номер дополнения</label>
+                    <input type="text" th:field="*{contractAddendum}" th:value="${purchaseOrder.contractAddendum}"/>
+                </div>
+                <div class="purchase_order_input">
+                    <label>Наименование изотопа</label>
+                    <input type="text" th:field="*{isotope}" th:value="${purchaseOrder.isotope}"/>
+                </div>
+                <div class="purchase_order_input">
+                    <label>Обогащение изотопа, %</label>
+                    <input type="text" th:field="*{isotopeEnrichment}"
+                           th:value="${purchaseOrder.isotopeEnrichment}"/>
+                </div>
+                <div class="purchase_order_input">
+                    <label>Химическая форма</label>
+                    <input type="text" th:field="*{isotopeChemicalForm}"
+                           th:value="${purchaseOrder.isotopeChemicalForm}"/>
+                </div>
+                <div class="purchase_order_input">
+                    <label>Элементарный вес, мг</label>
+                    <input type="text" th:field="*{isotopeElementaryWeight}"
+                           th:value="${purchaseOrder.isotopeElementaryWeight}"/>
+                </div>
+                <div class="purchase_order_input">
+                    <label>Лигатурынй вес, мг</label>
+                    <input type="text" th:field="*{isotopeLigatureWeight}"
+                           th:value="${purchaseOrder.isotopeLigatureWeight}"/>
+                </div>
+                <div>
+                    <input type="submit" value="Добавить" class="purchase_order_submit_button"/>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+    <div class="right_side">
+        <div class="scroll_table">
+            <table>
+                <thead>
+                <tr>
+                    <th>Контракт</th>
+                    <th>Дополнения к контракту</th>
+                    <th>Наименование изотопа</th>
+                    <th>Обогащение изотпа, %</th>
+                    <th>Химическая форма</th>
+                    <th>Элементарный вес, мг</th>
+                    <th>Лигатурный вес, мг</th>
+                </tr>
+                </thead>
+            </table>
+            <div class="scroll_table_body">
+                <table>
+                    <tbody th:each="purchaseOrder : ${allPurchaseOrders}">
+                    <tr>
+                        <td th:text="${purchaseOrder.contractNumber}"></td>
+                        <td th:text="${purchaseOrder.contractAddendum}"></td>
+                        <td th:text="${purchaseOrder.isotope}"></td>
+                        <td th:text="${purchaseOrder.isotopeEnrichment}"></td>
+                        <td th:text="${purchaseOrder.isotopeChemicalForm}"></td>
+                        <td th:text="${purchaseOrder.isotopeElementaryWeight}"></td>
+                        <td th:text="${purchaseOrder.isotopeLigatureWeight}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div th:insert="~{footer::footer}">Footer here</div>
+    </footer>
+</div>
 </body>
 </html>

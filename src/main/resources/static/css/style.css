@@ -69,7 +69,7 @@ body {
 
 /* registration page start */
 
-fieldset {
+.registration_fieldset {
     margin: 10% auto 0 auto;
     width: 370px;
     border: 3px solid black;
@@ -98,7 +98,8 @@ fieldset {
     letter-spacing: 0.05em;
 }
 
-/* registration page start */
+/* registration page end */
+
 h2 {
     margin-left: 10px;
 }
@@ -123,38 +124,78 @@ a:focus {
 
 }
 
-
 /* purchase order start */
 
-.input_form {
-    margin-top: 15px;
+.wrapper {
+    white-space: nowrap;
+    text-align: left;
+    overflow: scroll;
 }
 
-.data_labels, .data_input {
-    margin-left: 10px;
+.left_side {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 0 0 10px;
 }
 
-.input {
-    display: grid;
-    grid-auto-columns: max-content;
-    grid-gap: 13px;
+.right_side {
+    display: inline-block;
+    vertical-align: top;
+    margin: 25px 10px 0 0;
+    text-align: center;
 }
 
-
-.buttons_block {
-    display: flex;
-    height: 35px;
-    margin: 10px;
-
+.purchase_order_add_row_fieldset {
+    width: 405px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: end;
+    font-size: 15px;
 }
 
-.add_button {
-    font-family: Comic Sans MS, serif;
-    letter-spacing: 0.1em;
-    font-style: italic;
-    color: green;
+.purchase_order_legend {
+    font-size: 30px;
+    letter-spacing: 0.05em;
+}
+
+.purchase_order_input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.purchase_order_submit_button {
+    margin-top: 5px;
     width: 100px;
-    height: 40px;
-    box-shadow: 5px 5px 5px #777777;
-    border-radius: 15px 15px 15px 15px;
+    height: 35px;
+    box-shadow: 1px 1px 1px #6B7777;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 15px;
+    letter-spacing: 0.05em;
 }
+
+.scroll_table_body {
+    height: 800px;
+    overflow-x: auto;
+}
+
+.scroll_table table {
+    width: 1450px;
+    table-layout: fixed;
+    border: 1px solid black;
+}
+
+.scroll_table th {
+    text-align: center;
+    border: 1px solid black;
+    font-size: 12px;
+}
+
+.scroll_table tbody td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 12px;
+}
+
+/* purchase order end */
