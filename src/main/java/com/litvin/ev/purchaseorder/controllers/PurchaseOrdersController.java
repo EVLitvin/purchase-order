@@ -50,9 +50,16 @@ public class PurchaseOrdersController {
         return "purchase_orders";
     }
 
-    @PostMapping()
+    @PostMapping
     public String addPurchaseOrder(PurchaseOrder purchaseOrder) {
         purchaseOrderRepository.save(purchaseOrder);
+        return "redirect:/purchase_orders";
+    }
+
+    @PostMapping("/{id}/remove")
+    public String deletePurchaseOrderByID(@PathVariable(value = "id") Long id) {
+        PurchaseOrder purchaseOrder = purchaseOrderRepository.findById(id).orElseThrow(null);
+        purchaseOrderRepository.delete(purchaseOrder);
         return "redirect:/purchase_orders";
     }
 }

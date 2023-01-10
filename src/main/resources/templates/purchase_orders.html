@@ -63,13 +63,15 @@
             <table>
                 <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Контракт</th>
-                    <th>Дополнения к контракту</th>
-                    <th>Наименование изотопа</th>
-                    <th>Обогащение изотпа, %</th>
+                    <th>Дополнения</th>
+                    <th>Изотоп</th>
+                    <th>Обогащение, %</th>
                     <th>Химическая форма</th>
                     <th>Элементарный вес, мг</th>
                     <th>Лигатурный вес, мг</th>
+                    <th>Действия</th>
                 </tr>
                 </thead>
             </table>
@@ -77,6 +79,7 @@
                 <table>
                     <tbody th:each="purchaseOrder : ${allPurchaseOrders}">
                     <tr>
+                        <td th:text="${purchaseOrder.id}"></td>
                         <td th:text="${purchaseOrder.contractNumber}"></td>
                         <td th:text="${purchaseOrder.contractAddendum}"></td>
                         <td th:text="${purchaseOrder.isotope}"></td>
@@ -84,6 +87,11 @@
                         <td th:text="${purchaseOrder.isotopeChemicalForm}"></td>
                         <td th:text="${purchaseOrder.isotopeElementaryWeight}"></td>
                         <td th:text="${purchaseOrder.isotopeLigatureWeight}"></td>
+                        <td>
+                            <form th:action="'/purchase_orders/' + ${purchaseOrder.id} + '/remove'" method="post">
+                                <button class="delete_button" type="submit">Удалить</button>
+                            </form>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
