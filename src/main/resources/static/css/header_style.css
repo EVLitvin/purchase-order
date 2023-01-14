@@ -1,16 +1,40 @@
 .header {
-    background-color: black;
-    height: 50px;
+    width: 100%;
+    background-color: #292c2f;
+    color: whitesmoke;
+    font-size: 15px;
 }
 
-.nav_bar_links_list {
-    color: white;
-    padding: 15px 0 0 25px;
+.header_text {
+    font-size: 15px;
 }
 
-.nav_bar_links {
-    color: white;
-    padding: 5px;
-    display: inline;
-    font-size: 20px;
+.current_user {
+    padding-top: 5px;
+}
+
+.current_user_text {
+    color: #85ca7b;
+    font-size: 17px;
+    border-right: 1px solid whitesmoke;
+    padding-right: 5px;
+}
+
+.logout_link_text, .logout_link_text:visited {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.logout_link_text:hover, .logout_link_text:focus {
+    color: #f22;
+}
+
+.today_date {
+    padding-bottom: 5px;
+}
+
+.today_date_text {
+    color: #85ca7b;
+    font-size: 17px;
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta name="description" content="purchase orders for export department of isotope production"/>
+    <meta http-equiv="author" content="Evgenii Litvin"/>
+    <title></title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header class="header" id="header" th:fragment="header">
+    <div class="current_user">Пользователь -
+        <span class="current_user_text" th:text="${purchaseOrderUser.lastName + ' ' + purchaseOrderUser.firstName}">User lastname/firstname.</span>
+        <a th:href="@{/logout}" class="logout_link_text">Выйти</a>
+    </div>
+    <div class="today_date">Сегодня -
+        <span class="today_date_text" th:text="${date}">Today</span>
+    </div>
+</header>
+</body>
+</html>
