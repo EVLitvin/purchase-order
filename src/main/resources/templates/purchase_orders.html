@@ -10,10 +10,7 @@
 </head>
 <body>
 <header>
-    <span th:text="${purchaseOrderUser.lastName + ' ' + purchaseOrderUser.firstName}">User lastname/firstname.</span>
-    <span> | </span>
-    <a th:href="@{/logout}">Выйти</a>
-    <p class="paragraph">Сегодня - <span th:text="${date}">Today</span></p>
+    <div th:insert="~{header::header}">Header here</div>
 </header>
 <div class="wrapper">
     <div class="left_side">
