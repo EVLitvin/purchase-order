@@ -39,8 +39,13 @@
                 </div>
                 <div class="purchase_order_input">
                     <label>Химическая форма</label>
-                    <input type="text" th:field="*{isotopeChemicalForm}"
-                           th:value="${purchaseOrder.isotopeChemicalForm}"/>
+                    <select th:field="*{isotopeChemicalForm}" class="chemical_form_selection">
+                        <option th:value="carbonate">карбонат</option>
+                        <option th:value="metal">металл</option>
+                        <option th:value="oxide">оксид</option>
+                        <option th:value="sulfate">сульфат</option>
+                        <option th:value="chloride">хлорид</option>
+                    </select>
                 </div>
                 <div class="purchase_order_input">
                     <label>Элементарный вес, мг</label>
@@ -55,23 +60,26 @@
                 <div>
                     <input type="submit" value="Добавить" class="purchase_order_submit_button"/>
                 </div>
+                <div>
+                    <input type="reset" value="Очистить форму" class="purchase_order_reset_button"/>
+                </div>
             </form>
         </fieldset>
     </div>
     <div class="right_side">
         <div class="scroll_table">
-            <table>
+            <table style="height: 40px;">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Контракт</th>
-                    <th>Дополнения</th>
-                    <th>Изотоп</th>
-                    <th>Обогащение, %</th>
-                    <th>Химическая форма</th>
-                    <th>Элементарный вес, мг</th>
-                    <th>Лигатурный вес, мг</th>
-                    <th>Действия</th>
+                    <th style="width: 70px;">ID</th>
+                    <th style="width: 120px;">Контракт</th>
+                    <th style="width: 90px;">Дополнение</th>
+                    <th style="width: 60px;">Изотоп</th>
+                    <th style="width: 110px;">Обогащение, %</th>
+                    <th style="width: 140px;">Химическая форма</th>
+                    <th style="width: 170px;">Элементарный вес, мг</th>
+                    <th style="width: 150px;">Лигатурный вес, мг</th>
+                    <th style="width: 100px;">Действия</th>
                 </tr>
                 </thead>
             </table>
@@ -79,17 +87,17 @@
                 <table>
                     <tbody th:each="purchaseOrder : ${allPurchaseOrders}">
                     <tr>
-                        <td th:text="${purchaseOrder.id}"></td>
-                        <td th:text="${purchaseOrder.contractNumber}"></td>
-                        <td th:text="${purchaseOrder.contractAddendum}"></td>
-                        <td th:text="${purchaseOrder.isotope}"></td>
-                        <td th:text="${purchaseOrder.isotopeEnrichment}"></td>
-                        <td th:text="${purchaseOrder.isotopeChemicalForm}"></td>
-                        <td th:text="${purchaseOrder.isotopeElementaryWeight}"></td>
-                        <td th:text="${purchaseOrder.isotopeLigatureWeight}"></td>
-                        <td>
+                        <td style="width: 60px;" th:text="${purchaseOrder.id}"></td>
+                        <td style="width: 110px;" th:text="${purchaseOrder.contractNumber}"></td>
+                        <td style="width: 80px;" th:text="${purchaseOrder.contractAddendum}"></td>
+                        <td style="width: 50px;" th:text="${purchaseOrder.isotope}"></td>
+                        <td style="width: 100px;" th:text="${purchaseOrder.isotopeEnrichment}"></td>
+                        <td style="width: 130px;" th:text="${purchaseOrder.isotopeChemicalForm}"></td>
+                        <td style="width: 160px;" th:text="${purchaseOrder.isotopeElementaryWeight}"></td>
+                        <td style="width: 140px;" th:text="${purchaseOrder.isotopeLigatureWeight}"></td>
+                        <td style="width: 90px;">
                             <form th:action="'/purchase_orders/' + ${purchaseOrder.id} + '/remove'" method="post">
-                                <button class="delete_button" type="submit">Удалить</button>
+                                <button class="delete_row_button" type="submit">Удалить</button>
                             </form>
                         </td>
                     </tr>

@@ -164,9 +164,26 @@ a:focus {
     padding-bottom: 10px;
 }
 
+.chemical_form_selection {
+    width: 207px;
+    font-size: 15px;
+}
+
 .purchase_order_submit_button {
     margin-top: 5px;
+    margin-left: 10px;
     width: 100px;
+    height: 35px;
+    box-shadow: 1px 1px 1px #6B7777;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    float: right;
+}
+
+.purchase_order_reset_button {
+    margin-top: 5px;
+    width: 150px;
     height: 35px;
     box-shadow: 1px 1px 1px #6B7777;
     border-radius: 5px 5px 5px 5px;
@@ -180,7 +197,7 @@ a:focus {
 }
 
 .scroll_table table {
-    width: 1450px;
+    width: 970px;
     table-layout: fixed;
     border: 1px solid black;
 }
@@ -196,6 +213,20 @@ a:focus {
     border: 1px solid black;
     padding: 5px;
     font-size: 12px;
+}
+
+.scroll_table tr:hover {
+    background: #eae08bc7;
+}
+
+.delete_row_button {
+    margin-top: 5px;
+    width: 70px;
+    height: 25px;
+    box-shadow: 1px 1px 1px #6B7777;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
 }
 
 /* purchase order end */
