@@ -20,3 +20,30 @@ spring:
       ddl-auto: update
     defer-datasource-initialization: true
     open-in-view: off
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "dev"
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  datasource:
+    url: jdbc:h2:file:./data/h2_purchase_order_database
+    username: user
+    password: password
+    driverClassName: org.h2.Driver
+    generate-unique-name: false
+    name: h2_purchase_order_database
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    open-in-view: off
